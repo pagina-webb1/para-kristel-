@@ -1420,6 +1420,126 @@
                 margin-top: 24px;
             }
         }
+
+        /* Ajustes finales para pantallas pequenas y tactiles */
+        img,
+        canvas {
+            max-width: 100%;
+        }
+
+        button,
+        input,
+        textarea {
+            max-width: 100%;
+        }
+
+        @media (max-width: 700px) {
+            body {
+                width: 100%;
+                padding-right: max(12px, env(safe-area-inset-right));
+                padding-left: max(12px, env(safe-area-inset-left));
+            }
+
+            .container,
+            .carousel-wrapper,
+            .galaxy-stage {
+                width: 100%;
+            }
+
+            .header {
+                padding-inline: 4px;
+            }
+
+            .music-control {
+                width: 100%;
+            }
+
+            .music-btn,
+            .btn-surprise {
+                max-width: 100%;
+                white-space: normal;
+            }
+
+            .carousel-wrapper {
+                overflow: hidden;
+            }
+
+            .carousel {
+                height: clamp(370px, 112vw, 410px);
+            }
+
+            .card {
+                height: min(390px, calc(100vw - 48px));
+                min-height: 350px;
+            }
+
+            .card .card-text {
+                overflow-wrap: anywhere;
+            }
+
+            .modal-overlay {
+                align-items: flex-start;
+                padding-top: max(12px, env(safe-area-inset-top));
+                padding-bottom: max(12px, env(safe-area-inset-bottom));
+            }
+
+            .modal-content,
+            .book-modal-content {
+                width: 100%;
+                max-width: 100%;
+                margin: auto 0;
+            }
+
+            #modal .modal-content:has(.libro) {
+                width: 100%;
+                padding: 8px;
+            }
+
+            #modal .libro {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                max-width: 100%;
+                min-height: 0;
+                max-height: calc(100svh - 150px);
+                overflow-x: auto;
+                overflow-y: hidden;
+                scroll-snap-type: x mandatory;
+            }
+
+            #modal .pagina {
+                flex: 0 0 100%;
+                width: 100%;
+                min-width: 100%;
+                min-height: 280px;
+                height: auto;
+                padding: 28px 18px;
+                scroll-snap-align: start;
+            }
+
+            #modal .carta .texto {
+                overflow-wrap: anywhere;
+            }
+
+            .book-footer {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (min-width: 701px) and (max-width: 1100px) {
+            body {
+                padding-right: 24px;
+                padding-left: 24px;
+            }
+
+            .container {
+                width: 100%;
+            }
+
+            .card {
+                width: min(330px, calc(100vw - 120px));
+            }
+        }
     </style>
 </head>
 <body>
